@@ -254,6 +254,9 @@ module P2Enumerable
     end
     r
   end
+  def p2to_a
+    p2entries
+  end
 end
 
 class Array

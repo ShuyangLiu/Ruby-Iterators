@@ -183,6 +183,12 @@ def test_p2take_while
   p "#{__method__} passed"
 end
 
+def test_p2to_a
+  r = {'1'=>1,'2'=>2,'3'=>3}.p2to_a
+  raise "#{__method__} error" if r != [['1', 1], ['2', 2], ['3', 3]]
+  p "#{__method__} passed"
+end
+
 
 
 test_p2all
@@ -210,3 +216,4 @@ test_p2partition
 test_p2reject
 test_p2take
 test_p2take_while
+test_p2to_a
