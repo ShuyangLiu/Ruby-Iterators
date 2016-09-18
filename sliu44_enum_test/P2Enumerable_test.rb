@@ -61,6 +61,13 @@ def test_p2drop
   p "#{__method__} passed"
 end
 
+def test_p2drop_while
+  r = [1,2,3,4,5,0].p2drop_while{|e| e<3}
+  h = {'a'=>1, 'b'=>2, 'c'=>1}.p2drop_while{|e| e[1]<2}
+  raise "#{__method__} error" if (r!=[3, 4, 5, 0] || h!=[['b', 2], ['c', 1]])
+  p "#{__method__} passed"
+end
+
 
 test_p2all
 test_p2any
@@ -70,3 +77,4 @@ test_p2count
 test_p2cycle
 test_p2detect
 test_p2drop
+test_p2drop_while

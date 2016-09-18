@@ -68,6 +68,17 @@ module P2Enumerable
     end
     r
   end
+  def p2drop_while
+    r = Array.new
+    over = false
+    p2each do |e|
+      if !yield(e) || over==true
+        over = true
+        r << e
+      end
+    end
+    r
+  end
 end
 
 class Array
