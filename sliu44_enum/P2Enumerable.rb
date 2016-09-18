@@ -257,6 +257,14 @@ module P2Enumerable
   def p2to_a
     p2entries
   end
+  def p2to_h
+    ary = p2entries
+    hash = Hash.new
+    ary.p2each do |e|
+      hash[e[0]] = e[1]
+    end
+    hash
+  end
 end
 
 class Array

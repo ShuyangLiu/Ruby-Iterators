@@ -223,3 +223,4 @@ test_p2reject
 test_p2take
 test_p2take_while
 test_p2to_a
+test_p2to_h
