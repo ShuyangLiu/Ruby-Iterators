@@ -47,9 +47,17 @@ def test_p2cycle
   p "#{__method__} passed"
 end
 
+def test_p2detect
+  r = [1,2,3,4,5].p2detect{|e| e%2==0}
+  h = {'a'=>1, 'b'=>2, 'c'=>2}.p2detect{|e| e[1]==2}
+  raise "#{__method__} error" if (r!=2 || h!=['b', 2])
+  p "#{__method__} passed"
+end
+
 test_p2all
 test_p2any
 test_p2collect
 test_p2collect_concat
 test_p2count
 test_p2cycle
+test_p2detect

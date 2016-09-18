@@ -47,6 +47,16 @@ module P2Enumerable
       c+=1
     end
   end
+  def p2detect
+    r = nil
+    p2each do |e|
+      if yield(e)
+        r = e
+        break
+      end
+    end
+    r
+  end
 end
 
 class Array
