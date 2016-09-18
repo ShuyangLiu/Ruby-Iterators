@@ -155,6 +155,13 @@ def test_p2minmax_by
   p "#{__method__} passed"
 end
 
+def test_p2partition
+  r = [1,2,3,4,5,6].p2partition { |v| v.even? }
+  r_o = [1,2,3,4,5,6].partition { |v| v.even? }
+  raise "#{__method__} error" if r != r_o
+  p "#{__method__} passed"
+end
+
 
 
 test_p2all

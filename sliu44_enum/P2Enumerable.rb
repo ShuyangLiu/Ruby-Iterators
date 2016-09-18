@@ -210,6 +210,18 @@ module P2Enumerable
   def p2minmax_by
     p2minmax{|a,b| yield(a) <=> yield(b)}
   end
+  def p2partition
+    true_ary = Array.new
+    false_ary = Array.new
+    p2each do |e|
+      if yield(e)
+        true_ary << e
+       else
+        false_ary << e
+      end
+    end
+    [true_ary,false_ary]
+  end
 end
 
 class Array
