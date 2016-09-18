@@ -15,3 +15,6 @@ ruby P2Graph_enum_test.rb
 
 The iteration stops when the index is equal to the size of the array/hash
 
+Citation:
+Part of the code copied from the code by Professor Ding, Chen on lecture
+Part of the unit test example are from Ruby Official Documentation
