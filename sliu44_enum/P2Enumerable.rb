@@ -182,6 +182,18 @@ module P2Enumerable
     end
     hash
   end
+  def p2inject(initial = nil)
+    ary = self
+    if initial==nil
+      initial = self.p2entries[0]
+      ary = self.p2drop(1)
+    end
+    r = initial
+    ary.p2each do | e |
+      r = yield( r, e )
+    end
+    r
+  end
 end
 
 class Array

@@ -134,6 +134,12 @@ def test_p2group_by
   raise "#{__method__} error" if hash!=hash_o
   p "#{__method__} passed"
 end
+def test_p2inject
+  r = [1,2,3].p2inject{ |s, e| s + e }
+  r_o = [1,2,3].inject{ |s, e| s + e }
+  raise "#{__method__} error" if r != r_o
+  p "#{__method__} passed"
+end
 
 
 
@@ -155,3 +161,4 @@ test_p2find_all
 test_p2find_index
 test_p2first
 test_p2group_by
+test_p2inject
