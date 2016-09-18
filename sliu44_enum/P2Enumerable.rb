@@ -29,6 +29,15 @@ module P2Enumerable
     end
     r
   end
+  def p2count
+    r = 0
+    p2each do |e|
+      if yield(e)
+        r+=1
+      end
+    end
+    r
+  end
 end
 
 class Array

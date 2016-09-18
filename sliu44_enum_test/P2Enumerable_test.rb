@@ -30,6 +30,13 @@ def test_p2collect_concat
   raise "#{__method__} error" if (r != [1,-1,2,-2,3,-3] || h != [%w(a 1), Array, %w(b 2), Array])
   p "#{__method__} passed"
 end
+def test_p2count
+  r = [1,2,3,4,5,6].p2count{|e| e%2==0}
+  h = {'a'=>1, 'b'=>2, 'c'=>3}.p2count{|e| e[1]%2==1}
+  raise "#{__method__} error" if (r!=3 || h!=2)
+  p "#{__method__} passed"
+end
+
 test_p2all
 test_p2any
 test_p2collect
