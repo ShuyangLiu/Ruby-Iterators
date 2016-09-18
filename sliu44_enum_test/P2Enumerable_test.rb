@@ -68,6 +68,14 @@ def test_p2drop_while
   p "#{__method__} passed"
 end
 
+def test_p2each_cons
+  r = [1,2,3,4,5]
+  res = []
+  r.p2each_cons(2){|e| res << e}
+  raise "#{__method__} error" if (res!=[[1, 2], [2, 3], [3, 4], [4, 5]])
+  p "#{__method__} passed"
+end
+
 
 test_p2all
 test_p2any
@@ -78,3 +86,4 @@ test_p2cycle
 test_p2detect
 test_p2drop
 test_p2drop_while
+test_p2each_cons

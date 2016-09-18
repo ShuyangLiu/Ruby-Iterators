@@ -79,6 +79,24 @@ module P2Enumerable
     end
     r
   end
+  def p2each_cons(n)
+    i = 0
+    size = 0
+    p2each do |e|
+      size+=1
+    end
+    (size - n + 1).times do |q|
+      tmp = 0
+      ary = []
+      p2each do |e|
+        if tmp>=i+q && tmp<=i+q+n-1
+          ary << e
+        end
+        tmp+=1
+      end
+      yield(ary)
+    end
+  end
 end
 
 class Array
