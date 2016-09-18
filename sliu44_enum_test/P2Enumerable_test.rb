@@ -189,6 +189,12 @@ def test_p2to_a
   p "#{__method__} passed"
 end
 
+def test_p2to_h
+  r = [[1,2],[3,4]].p2to_h
+  raise "#{__method__} error" if r != {1=>2, 3=>4}
+  p "#{__method__} passed"
+end
+
 
 
 test_p2all
