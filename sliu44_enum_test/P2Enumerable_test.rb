@@ -176,6 +176,13 @@ def test_p2take
   p "#{__method__} passed"
 end
 
+def test_p2take_while
+  r = [1, 2, 3, 4, 5, 0].p2take_while { |i| i < 3 }
+  r_o = [1, 2, 3, 4, 5, 0].take_while { |i| i < 3 }
+  raise "#{__method__} error" if r != r_o
+  p "#{__method__} passed"
+end
+
 
 
 test_p2all
@@ -202,3 +209,4 @@ test_p2minmax_by
 test_p2partition
 test_p2reject
 test_p2take
+test_p2take_while

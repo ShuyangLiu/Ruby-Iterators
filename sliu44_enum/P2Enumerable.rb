@@ -243,6 +243,17 @@ module P2Enumerable
     end
     r
   end
+  def p2take_while
+    r = Array.new
+    p2each do |e|
+      if yield(e)
+        r << e
+      else
+        break
+      end
+    end
+    r
+  end
 end
 
 class Array
