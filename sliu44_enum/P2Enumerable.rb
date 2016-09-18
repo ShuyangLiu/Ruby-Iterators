@@ -128,6 +128,13 @@ module P2Enumerable
       yield(a)
     end
   end
+  def p2each_with_index
+    i = 0
+    p2each do |e|
+      yield(e,i)
+      i+=1
+    end
+  end
 end
 
 class Array

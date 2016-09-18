@@ -82,6 +82,14 @@ def test_p2each_slice
   raise "#{__method__} error" if (res!=[[1, 2], [3, 4], [5]])
   p "#{__method__} passed"
 end
+def test_p2each_with_index
+  hash = Hash.new
+  hash_o = Hash.new
+  %w(cat dog wombat).p2each_with_index { |item, index| hash[item] = index }
+  %w(cat dog wombat).each_with_index { |item, index| hash_o[item] = index }
+  raise "#{__method__} error" if hash!=hash_o
+  p "#{__method__} passed"
+end
 
 
 test_p2all
@@ -95,3 +103,4 @@ test_p2drop
 test_p2drop_while
 test_p2each_cons
 test_p2each_slice
+test_p2each_with_index
