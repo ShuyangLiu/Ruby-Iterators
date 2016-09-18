@@ -162,6 +162,13 @@ module P2Enumerable
     end
     i
   end
+  def p2first(n=nil)
+    if n==nil
+      self.p2entries[0]
+    else
+      self.p2entries[0..n-1]
+    end
+  end
 end
 
 class Array
