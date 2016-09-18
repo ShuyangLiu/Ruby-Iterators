@@ -57,6 +57,17 @@ module P2Enumerable
     end
     r
   end
+  def p2drop(n)
+    r = Array.new
+    c = 0
+    p2each do |e|
+      if c>=n
+        r << e
+      end
+      c+=1
+    end
+    r
+  end
 end
 
 class Array

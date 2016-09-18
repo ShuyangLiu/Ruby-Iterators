@@ -54,6 +54,14 @@ def test_p2detect
   p "#{__method__} passed"
 end
 
+def test_p2drop
+  r = [1,2,3,4,5].p2drop(3)
+  h = {'a'=>1, 'b'=>2, 'c'=>2}.p2drop(1)
+  raise "#{__method__} error" if (r!=[4, 5] || h!=[['b', 2], ['c', 2]])
+  p "#{__method__} passed"
+end
+
+
 test_p2all
 test_p2any
 test_p2collect
@@ -61,3 +69,4 @@ test_p2collect_concat
 test_p2count
 test_p2cycle
 test_p2detect
+test_p2drop
