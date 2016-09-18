@@ -169,6 +169,19 @@ module P2Enumerable
       self.p2entries[0..n-1]
     end
   end
+  def p2group_by
+    hash = Hash.new
+    p2each do |e|
+      r = yield(e)
+      ary = hash[r]
+      if ary==nil
+        ary = Array.new
+      end
+      ary << e
+      hash[r] = ary
+    end
+    hash
+  end
 end
 
 class Array

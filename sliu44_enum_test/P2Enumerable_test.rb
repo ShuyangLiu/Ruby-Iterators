@@ -128,6 +128,13 @@ def test_p2first
   p "#{__method__} passed"
 end
 
+def test_p2group_by
+  hash = [1,2,3,4,5,6,7,8,9,10].p2group_by{|e| e%4}
+  hash_o = [1,2,3,4,5,6,7,8,9,10].group_by{|e| e%4}
+  raise "#{__method__} error" if hash!=hash_o
+  p "#{__method__} passed"
+end
+
 
 
 test_p2all
@@ -147,3 +154,4 @@ test_p2find
 test_p2find_all
 test_p2find_index
 test_p2first
+test_p2group_by
