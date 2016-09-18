@@ -91,6 +91,14 @@ def test_p2each_with_index
   p "#{__method__} passed"
 end
 
+def test_p2entries
+  r = { 'a'=>1, 'b'=>2, 'c'=>3 }.p2entries
+  r_o = { 'a'=>1, 'b'=>2, 'c'=>3 }.entries
+  raise "#{__method__} error" if r!=r_o
+  p "#{__method__} passed"
+end
+
+
 
 test_p2all
 test_p2any
@@ -104,3 +112,4 @@ test_p2drop_while
 test_p2each_cons
 test_p2each_slice
 test_p2each_with_index
+test_p2entries

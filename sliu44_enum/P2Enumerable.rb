@@ -135,6 +135,13 @@ module P2Enumerable
       i+=1
     end
   end
+  def p2entries
+    r = Array.new
+    p2each do |e|
+      r << e
+    end
+    r
+  end
 end
 
 class Array
