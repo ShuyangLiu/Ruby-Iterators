@@ -18,5 +18,11 @@ def test_p2any
   raise "#{__method__} error" if a!=a_o || b!=b_o
   p "#{__method__} passed"
 end
+def test_p2collect
+  r = [1,2,3].p2collect{ |e| e+1 }
+  raise "#{__method__} error" if r != [2,3,4]
+  p "#{__method__} passed"
+end
 test_p2all
 test_p2any
+test_p2collect

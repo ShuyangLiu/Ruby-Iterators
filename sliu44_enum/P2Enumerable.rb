@@ -13,6 +13,14 @@ module P2Enumerable
     end
     r
   end
+  def p2collect
+    r = Array.new
+    p2each do |e|
+      res = yield(e)
+      r << res
+    end
+    r
+  end
 end
 
 class Array
