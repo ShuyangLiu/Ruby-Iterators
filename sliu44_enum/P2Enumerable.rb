@@ -231,6 +231,18 @@ module P2Enumerable
     end
     r
   end
+  def p2take(n)
+    r = Array.new
+    c = 0
+    p2each do |e|
+      if c>=n
+        break
+      end
+      r << e
+      c+=1
+    end
+    r
+  end
 end
 
 class Array

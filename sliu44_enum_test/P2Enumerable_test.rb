@@ -169,6 +169,13 @@ def test_p2reject
   p "#{__method__} passed"
 end
 
+def test_p2take
+  r = [1, 2, 3, 4, 5, 0].p2take(3)
+  r_o = [1, 2, 3, 4, 5, 0].take(3)
+  raise "#{__method__} error" if r != r_o
+  p "#{__method__} passed"
+end
+
 
 
 test_p2all
@@ -191,3 +198,7 @@ test_p2first
 test_p2group_by
 test_p2inject
 test_p2minmax
+test_p2minmax_by
+test_p2partition
+test_p2reject
+test_p2take
