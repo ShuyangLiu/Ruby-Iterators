@@ -152,6 +152,16 @@ module P2Enumerable
     end
     r
   end
+  def p2find_index
+    i = 0
+    p2each do |e|
+      if yield(e)
+        break
+      end
+      i+=1
+    end
+    i
+  end
 end
 
 class Array
