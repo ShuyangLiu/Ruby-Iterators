@@ -222,6 +222,15 @@ module P2Enumerable
     end
     [true_ary,false_ary]
   end
+  def p2reject
+    r = Array.new
+    p2each do |e|
+      unless yield(e)
+        r << e
+      end
+    end
+    r
+  end
 end
 
 class Array

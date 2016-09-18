@@ -162,6 +162,13 @@ def test_p2partition
   p "#{__method__} passed"
 end
 
+def test_p2reject
+  r = [1,2,3,4,5,6,7,8,9,10].p2reject { |i|  i % 3 == 0 }
+  r_o = [1,2,3,4,5,6,7,8,9,10].reject { |i|  i % 3 == 0 }
+  raise "#{__method__} error" if r != r_o
+  p "#{__method__} passed"
+end
+
 
 
 test_p2all
