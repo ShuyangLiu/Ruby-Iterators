@@ -6,6 +6,13 @@ module P2Enumerable
     end
     r
   end
+  def p2any?
+    r = false
+    p2each do |e|
+      r = r || yield(e)
+    end
+    r
+  end
 end
 
 class Array

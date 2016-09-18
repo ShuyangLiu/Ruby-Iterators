@@ -8,4 +8,15 @@ def test_p2all
   raise "#{__method__} error" unless r
   p "#{__method__} passed"
 end
+def test_p2any
+  ary = %w(one abc ssss)
+  hash = {'one'=>1, 'two'=>2, 'three'=>3}
+  a = ary.p2any? {|e| e.length==4}
+  b = hash.p2any? {|e| e[0].length==5}
+  a_o = ary.any?{|e| e.length==4}
+  b_o = hash.any? {|e| e[0].length==5}
+  raise "#{__method__} error" if a!=a_o || b!=b_o
+  p "#{__method__} passed"
+end
 test_p2all
+test_p2any
