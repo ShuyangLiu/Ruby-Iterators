@@ -147,6 +147,13 @@ def test_p2minmax
   raise "#{__method__} error" if r != r_o
   p "#{__method__} passed"
 end
+def test_p2minmax_by
+  a = %w(albatross dog horse)
+  r = a.p2minmax_by { |x| x.length }
+  r_o = a.minmax_by { |x| x.length }
+  raise "#{__method__} error" if r != r_o
+  p "#{__method__} passed"
+end
 
 
 

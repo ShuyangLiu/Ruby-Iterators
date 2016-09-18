@@ -207,6 +207,9 @@ module P2Enumerable
     end
     [min, max]
   end
+  def p2minmax_by
+    p2minmax{|a,b| yield(a) <=> yield(b)}
+  end
 end
 
 class Array
