@@ -194,6 +194,19 @@ module P2Enumerable
     end
     r
   end
+  def p2minmax
+    min = self.p2entries[0]
+    max = self.p2entries[0]
+    p2each do |e|
+      if yield(e,min)<0
+        min = e
+      end
+      if yield(e,max)>0
+        max = e
+      end
+    end
+    [min, max]
+  end
 end
 
 class Array

@@ -140,6 +140,13 @@ def test_p2inject
   raise "#{__method__} error" if r != r_o
   p "#{__method__} passed"
 end
+def test_p2minmax
+  w = %w(albatross dog horse)
+  r = w.p2minmax { |a, b| a.length <=> b.length }
+  r_o = w.minmax { |a, b| a.length <=> b.length }
+  raise "#{__method__} error" if r != r_o
+  p "#{__method__} passed"
+end
 
 
 
@@ -162,3 +169,4 @@ test_p2find_index
 test_p2first
 test_p2group_by
 test_p2inject
+test_p2minmax
