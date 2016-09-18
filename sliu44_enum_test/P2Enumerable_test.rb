@@ -36,8 +36,20 @@ def test_p2count
   raise "#{__method__} error" if (r!=3 || h!=2)
   p "#{__method__} passed"
 end
+def test_p2cycle
+  s = 0
+  r = [1,2,3,4,5]
+  r.p2cycle(2){|e| s+=e}
+  h = 0
+  hash = {'a'=>1, 'b'=>2, 'c'=>3}
+  hash.p2cycle(3){|e| h+=e[1]}
+  raise "#{__method__} error" if (s!=30 || h!=18)
+  p "#{__method__} passed"
+end
 
 test_p2all
 test_p2any
 test_p2collect
 test_p2collect_concat
+test_p2count
+test_p2cycle

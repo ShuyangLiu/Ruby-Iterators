@@ -38,6 +38,15 @@ module P2Enumerable
     end
     r
   end
+  def p2cycle(n=-1)
+    c = 0
+    until c==n do
+      p2each do |e|
+        yield(e)
+      end
+      c+=1
+    end
+  end
 end
 
 class Array
