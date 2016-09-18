@@ -143,7 +143,15 @@ module P2Enumerable
     r
   end
   alias p2find p2detect
-  
+  def p2find_all
+    r = Array.new
+    p2each do |e|
+      if yield(e)
+        r << e
+      end
+    end
+    r
+  end
 end
 
 class Array

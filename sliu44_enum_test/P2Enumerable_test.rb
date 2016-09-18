@@ -107,6 +107,13 @@ def test_p2find
   p "#{__method__} passed"
 end
 
+def test_p2find_all
+  r = [1,2,3,4,5,6,7,8,9,10].p2find_all{|e| e%2==0}
+  r_o = [1,2,3,4,5,6,7,8,9,10].find_all{|e| e%2==0}
+  raise "#{__method__} error" if r!=r_o
+  p "#{__method__} passed"
+end
+
 
 
 test_p2all
@@ -123,3 +130,4 @@ test_p2each_slice
 test_p2each_with_index
 test_p2entries
 test_p2find
+test_p2find_all
