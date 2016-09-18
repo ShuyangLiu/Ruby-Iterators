@@ -97,6 +97,37 @@ module P2Enumerable
       yield(ary)
     end
   end
+  def p2each_slice(n)
+    i = n-1
+    size = 0
+    p2each do |e|
+      size+=1
+    end
+    (size / n).times do |q|
+      tmp = 0
+      ary = []
+      p2each do |e|
+        if tmp>=i-n+1 && tmp<=i
+          ary << e
+        end
+        tmp+=1
+      end
+      yield(ary)
+      i+=n
+    end
+    i-=n
+    if i<(size-1)
+      tmp = 0
+      a = []
+      p2each do |e|
+        if tmp>=i+1 && tmp<=size-1
+          a << e
+        end
+        tmp+=1
+      end
+      yield(a)
+    end
+  end
 end
 
 class Array
