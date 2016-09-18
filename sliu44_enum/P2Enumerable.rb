@@ -142,6 +142,8 @@ module P2Enumerable
     end
     r
   end
+  alias p2find p2detect
+  
 end
 
 class Array

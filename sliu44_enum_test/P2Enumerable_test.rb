@@ -98,6 +98,15 @@ def test_p2entries
   p "#{__method__} passed"
 end
 
+def test_p2find
+  r = [1,2,3,4,5].p2find{|e| e%2==0}
+  r_o = [1,2,3,4,5].find{|e| e%2==0}
+  h = {'a'=>1, 'b'=>2, 'c'=>2}.p2find{|e| e[1]==2}
+  h_o = {'a'=>1, 'b'=>2, 'c'=>2}.find{|e| e[1]==2}
+  raise "#{__method__} error" if (r!=r_o || h!=h_o)
+  p "#{__method__} passed"
+end
+
 
 
 test_p2all
@@ -113,3 +122,4 @@ test_p2each_cons
 test_p2each_slice
 test_p2each_with_index
 test_p2entries
+test_p2find
